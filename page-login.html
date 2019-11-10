@@ -33,34 +33,34 @@
 							<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
 							<p class="lead">Login to your account</p>
 						</div>
-						<form class="form-auth-small" action="{{ route('login') }}" method="POST">
+						<form class="form-auth-small" action="#" method="POST">
 							<div class="form-group">
-								<label for="signed-email" class="control-label sr-only">Email</label>
-								<input type="mobile" class="form-control{{ $errors->has('mobile') ? ' is-invalid' : '' }}" name="mobile" value="{{ old('mobile') }}" placeholder="Mobile Number" required autofocus id="signed-email">
-								@if ($errors->has('mobile'))
+								<label for="email" class="control-label sr-only">Email</label>
+								<input type="email" class="form-control" name="email" placeholder="email" required id="email">
+								
 		                            <span class="invalid-feedback" role="alert">
-		                                <strong>{{ $errors->first('mobile') }}</strong>
+		                                <strong></strong>
 		                            </span>
-		                        @endif
+		                        
 							</div>
 							<div class="form-group">
-								<label for="assword" class="control-label sr-only">Password</label>
-								<input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" required id="password">
-								@if ($errors->has('password'))
+								<label for="password" class="control-label sr-only">Password</label>
+								<input type="password" class="form-control" name="password" placeholder="Password" required id="password">
+								
 		                            <span class="invalid-feedback" role="alert">
-		                                <strong>{{ $errors->first('password') }}</strong>
+		                                <strong></strong>
 		                            </span>
-		                        @endif
+		                        
 							</div>
 							<div class="form-group clearfix">
 								<label class="fancy-checkbox element-left">
-									<input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+									<input type="checkbox" name="remember" id="remember">
 									<span>Remember me</span>
 								</label>
 							</div>
 							<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
 							<div class="bottom">
-								<span class="helper-text"><i class="fa fa-lock"></i> <a href="{{ route('password.request') }}">Forgot password?</a></span>
+								<span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
 							</div>
 						</form>
 					</div>
@@ -68,8 +68,8 @@
 				<div class="right">
 					<div class="overlay"></div>
 					<div class="content text">
-						<h1 class="heading">Free Bootstrap dashboard template</h1>
-						<p>by The Develovers</p>
+						<h1 class="heading">Government Laboratory High School</h1>
+						<p>by the F191-2 Developers</p>
 					</div>
 				</div>
 				<div class="clearfix"></div>
