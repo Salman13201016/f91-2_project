@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Elements | Klorofil - Free Bootstrap Dashboard Template</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="css/main.css">
+	
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+</head>
+
+<body>
+	<!-- WRAPPER -->
+	<div id="wrapper">
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="brand">
+				<a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+			</div>
+			<div class="container-fluid">
+				<div class="navbar-btn">
+					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+				</div>
+
+				<div id="navbar-menu">
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li class="dropdown">
+							<a href="#"><i class="lnr lnr-briefcase""></i> 200$ </a>
+							
+						</li>
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+								<i class="lnr lnr-alarm"></i>
+								<span class="badge bg-danger">5</span>
+							</a>
+							<ul class="dropdown-menu notifications">
+								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
+								<li><a href="#" class="more">See all notifications</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+								<li><a href="#"><i class="lnr lnr-pencil"></i> <span>Edit Profile</span></a></li>
+								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- END NAVBAR -->
+		<!-- LEFT SIDEBAR -->
+		<div id="sidebar-nav" class="sidebar">
+			<div class="sidebar-scroll">
+				<nav>
+					<ul class="nav">
+						
+						<li>
+							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Admins</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages" class="collapse ">
+								<ul class="nav">
+									<li><a href="page-profile.html" class="">Add a New Admin</a></li>
+									<li><a href="page-login.html" class="">Admin List</a></li>
+									<li><a href="page-lockscreen.html" class="">Admin Managers List</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Add Admin Balance</span></a></li>
+						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- END LEFT SIDEBAR -->
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<h3 class="page-title">Elements</h3>
+					<div class="row col-md-8 col-md-offset-2">
+
+						<!-- INPUTS -->
+						<div class="panel">
+							<form>
+								<div class="panel-heading">
+									<h3 class="panel-title">Inputs</h3>
+								</div>
+								<div class="panel-body">
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="fullname"  class="control-label">Full Name</label>
+											<input id="fullname" name="fullname" type="text" class="form-control is-invalid" placeholder="Your Full Name">
+										</div>
+
+										<div class="form-group">
+											<label for="email"  class="control-label">Email</label>
+											<input id="email" name="email" type="text" class="form-control is-invalid" placeholder="Your Email">
+										</div>
+
+										<div class="form-group">
+											<label for="mobile"  class="control-label">Mobile</label>
+											<input id="mobile" name="mobile" type="text" class="form-control is-invalid" placeholder="Your Mobile Number">
+										</div>
+
+										<div class="form-group">
+											<label for="password"  class="control-label">Password</label>
+											<input id="password" name="email" type="password" class="form-control is-invalid" placeholder="Password">
+										</div>
+
+										<div class="form-group">
+											<label for="password_confirmation"  class="control-label">Password Confirm</label>
+											<input id="password_confirmation" name="password_confirmation" type="password" class="form-control is-invalid" placeholder="Confirm Password">
+										</div>
+
+										<div class="form-group">
+											<label for="user_type"  class="control-label">Account Type</label>
+											<select name="user_type" class="form-control">
+												<option value="AG">Agent</option>
+												<option value="PE">Personal</option>
+											</select>
+										</div>
+										
+									</div>
+
+									<div class="col-md-6">
+										
+										<div class="form-group">
+											<label for="pin"  class="control-label">Pin</label>
+											<input id="pin" name="pin" type="password" class="form-control is-invalid" placeholder="PIN">
+										</div>
+
+										<div class="form-group">
+											<label for="pin_confirmation"  class="control-label">Pin Confirm</label>
+											<input id="pin_confirmation" name="pin_confirmation" type="password" class="form-control is-invalid" placeholder="Confirm PIN">
+										</div>
+
+										<div class="form-group">
+											<label for="country"  class="control-label">Country</label>
+											<select name="country" class="form-control">
+												<option value="cheese">Cheese</option>
+												<option value="tomatoes">Tomatoes</option>
+												<option value="mozarella">Mozzarella</option>
+												<option value="mushrooms">Mushrooms</option>
+												<option value="pepperoni">Pepperoni</option>
+												<option value="onions">Onions</option>
+											</select>
+										</div>
+
+										<div class="form-group">
+											<label for="nationality"  class="control-label">Nationality</label>
+											<select name="nationality" class="form-control">
+												<option value="cheese">Cheese</option>
+												<option value="tomatoes">Tomatoes</option>
+												<option value="mozarella">Mozzarella</option>
+												<option value="mushrooms">Mushrooms</option>
+												<option value="pepperoni">Pepperoni</option>
+												<option value="onions">Onions</option>
+											</select>
+										</div>
+
+										<div class="form-group">
+											<label for="currency"  class="control-label">Currency</label>
+											<select name="cyrrency" class="form-control">
+												<option value="cheese">Cheese</option>
+												<option value="tomatoes">Tomatoes</option>
+												<option value="mozarella">Mozzarella</option>
+												<option value="mushrooms">Mushrooms</option>
+												<option value="pepperoni">Pepperoni</option>
+												<option value="onions">Onions</option>
+											</select>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="panel-footer text-right">
+									<button type="submit" id="btnSave" class="btn btn-success">Create User</button>
+								</div>
+							</form>
+						</div>
+						<!-- END INPUTS -->	
+
+					</div>
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+		<div class="clearfix"></div>
+		<footer>
+			<div class="container-fluid">
+				<p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+	<!-- END WRAPPER -->
+	<!-- Javascript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slimscroll.min.js"></script>
+	<script src="js/klorofil-common.js"></script>
+</body>
+
+</html>
