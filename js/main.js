@@ -1,0 +1,46 @@
+$(document).ready(function(){
+    $('.display-block').hide();
+
+    $('#pi_btn').click(function(){
+        //console.log("yes");
+        $('#pi_panel').show();
+        $('#ei_panel').hide();
+        $('#ai_panel').hide();
+    });
+    $('#ei_btn').click(function(){
+        //console.log("yes");
+        $('#pi_panel').hide();
+        $('#ei_panel').show();
+        $('#ai_panel').hide();
+    });
+    $('#ai_btn').click(function(){
+        //console.log("yes");
+        $('#pi_panel').hide();
+        $('#ei_panel').hide();
+        $('#ai_panel').show();
+    });
+    $('#pi_btn_next').click(function(){
+        //console.log("yes");
+        $('#pi_panel').hide();
+        $('#ei_panel').show();
+        $('#ai_panel').hide();
+    });
+    $('#ei_btn_next').click(function(){
+        //console.log("yes");
+        $('#pi_panel').hide();
+        $('#ei_panel').hide();
+        $('#ai_panel').show();
+    });
+    $('#ei_btn_back').click(function(){
+        //console.log("yes");
+        $('#pi_panel').show();
+        $('#ei_panel').hide();
+        $('#ai_panel').hide();
+    });
+    $('#ai_btn_back').click(function(){
+        //console.log("yes");
+        $('#pi_panel').hide();
+        $('#ei_panel').show();
+        $('#ai_panel').hide();
+    });
+});
