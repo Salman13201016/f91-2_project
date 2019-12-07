@@ -1,3 +1,78 @@
+<?php
+	include 'database/connect.php';
+	/* PHP MAILER LIBRARY */
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
+	require 'phpmailer/src/Exception.php';
+	require 'phpmailer/src/PHPMailer.php';
+	require 'phpmailer/src/SMTP.php';
+	$error ='';
+	$length ='';
+	$pwd='';
+	$email_check='';
+	if(isset($_POST['signup'])){
+		$email = mysqli_escape_string($conn,$_POST['email']);
+		$password = mysqli_escape_string($conn,$_POST['password']);
+		$confirmPassword = mysqli_escape_string($conn,$_POST['confirmpassword']);
+
+		$sql = "SELECT email FROM admin WHERE email = '$email'";
+		$query = mysqli_query($conn,$sql);
+		if(mysqli_num_rows($query)>0){
+			$email_check="You email is already existed";
+		}
+		elseif(strlen($password)<6){
+			$length ="Password length must be greater than 5";
+		}
+		elseif(empty($email) || empty($password) || empty($confirmPassword)){
+			$error = "This field is required";
+		}
+		elseif($password!=$confirmPassword){
+			$pwd='Your password are not equal';
+		}
+		else{
+			/* Encrypted password */
+			$password = md5($password);
+			/* Generate a new verification key with encryption */
+			$vkey = md5(time().$email);
+
+			/* Insert Data into user table */
+			$sql = "INSERT INTO admin (email,pass,v_key,v_status) VALUES ('$email','$password','$vkey',0)";
+			$query = mysqli_query($conn,$sql);
+
+			if($query){
+				$mail = new PHPMailer;
+				//* set phpmailer to use SMTP */
+				$mail->isSMTP();
+				/* smtp host */
+				$mail->Host = "smtp.gmail.com";
+				$mail->SMTPAuth = true;
+				
+				/* Provide User Name and Password as your email address(FromEmail) */
+				$mail->Username = "your email address (from email)";
+				$mail->Password = "your password (from email)";
+				$mail->SMTPSecure ="tls";
+				$mail->Port= 587;
+				$mail->From = "your email address (from email)";
+				$mail->FromName = "sms-f191";
+				$mail->addAddress($email,"Salman");
+				$mail->isHTML(true);
+				/* Set Subject and messages of body */
+				$mail->Subject = "Email Verification From wdevF191-2";
+				$mail->Body = "<a href='http://localhost/f191-2_PROJECT/verify.php?vkey=$vkey'>Click This Activation Link</a>";
+				if(!$mail->send()){
+					echo "Mailer Error". $mail->ErrorInfo;
+				}
+				else{
+					echo "<script>alert('Verification Has been Sent Successfully')</script>";
+				}
+				header('location:success.php');
+			}	
+		}
+	}
+
+?>
+
+
 <!doctype html>
 <html lang="en" class="fullscreen-bg">
 
@@ -36,24 +111,24 @@
 						<form class="form-auth-small" action="#" method="POST">
 							<div class="form-group">
 								<label for="email" class="control-label sr-only">Email</label>
-								<input type="email" class="form-control" name="email" placeholder="email" required id="email">
-								
-		                            <span class="invalid-feedback" role="alert">
-		                                <strong></strong>
-		                            </span>
-		                        
+								<input type="email" class="form-control" name="email" placeholder="email"  id="email">
+								<span class="text-danger"><?=$error;?><?=$email_check;?></span>
 							</div>
 							<div class="form-group">
 								<label for="password" class="control-label sr-only">Password</label>
-								<input type="password" class="form-control" name="password" placeholder="Password" required id="password">
-								
-		                            <span class="invalid-feedback" role="alert">
-		                                <strong></strong>
-		                            </span>
+								<input type="password" class="form-control" name="password" placeholder="Password"  id="password">
+								<span class="text-danger"><?=$error;?><?=$length;?></span>
+		                        
+							</div>
+
+							<div class="form-group">
+								<label for="confrimpassword" class="control-label sr-only">Confirm Password</label>
+								<input type="password" class="form-control" name="confirmpassword" placeholder="Password"  id="password">
+								<span class="text-danger"><?=$error;?><?=$pwd;?></span>
 		                        
 							</div>
 					
-							<button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+							<button type="submit" name="signup" class="btn btn-primary btn-lg btn-block">Sign Up</button>
 						</form>
 					</div>
 				</div>
