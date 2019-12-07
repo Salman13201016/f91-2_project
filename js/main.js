@@ -1,6 +1,25 @@
 $(document).ready(function(){
+
+    $("#ei_btn").addClass('disabled');
+    $("#ai_btn").addClass('disabled');
+    $("#pi_btn_next").addClass('disabled');
+    $("#ei_btn_next").addClass('disabled');
+    $("#ei_btn_back").addClass('disabled');
+    $("#ai_btn_back").addClass('disabled');
     $('.display-block').hide();
 
+    $("input[type=text], input[type=number],input[type=date], select").keyup(function(){
+        console.log("something");
+        if($("#fname").val() !=="" && $("#lname").val() !=="" && $("#sphone").val() !=="" && $("#dob").val() !=="" && $("#sblood").val() !=="" && $("#gname").val() !=="" && $("#goccup").val() !=="" && $("#gphone").val() !==""){
+            $("#ei_btn").removeClass('disabled');
+            $("#pi_btn_next").removeClass('disabled');  
+        }
+        else{
+            $("#ei_btn").addClass('disabled');
+            $("#pi_btn_next").addClass('disabled');
+        }
+    
+    });
     $('#pi_btn').click(function(){
         //console.log("yes");
         $('#pi_panel').show();
